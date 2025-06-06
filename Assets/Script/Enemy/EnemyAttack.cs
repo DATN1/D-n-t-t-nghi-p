@@ -6,8 +6,10 @@ public class EnemyAttack : MonoBehaviour
     public float attackCooldown = 1f;       // Thời gian giữa 2 lần tấn công
     private bool canAttack = true;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
+        if (GameManager.Instance.isGameOver) return;
+
         if (other.CompareTag("Player") && canAttack)
         {
             PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();

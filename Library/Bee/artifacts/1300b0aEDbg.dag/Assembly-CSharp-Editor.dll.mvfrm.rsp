@@ -8,6 +8,10 @@ Library\Bee\artifacts\mvdfrm\Unity.AdaptivePerformance.Simulator.Editor.ref.dll_
 Library\Bee\artifacts\mvdfrm\Unity.AdaptivePerformance.Simulator.Extension.ref.dll_96C433F2A05650D6.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.AdaptivePerformance.UI.Editor.ref.dll_D90D5A34877188F8.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.AdaptivePerformance.ref.dll_6268F5D1C23BCB5F.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Formats.Alembic.Editor.ref.dll_CE9C842E229B3AE5.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Formats.Alembic.Runtime.ref.dll_89C21C7F046DDA76.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Formats.Fbx.Editor.ref.dll_5E9C25B0C5BE7982.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Formats.Fbx.Runtime.ref.dll_CECEFA5A21CADF89.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Mobile.AndroidLogcat.Editor.ref.dll_6945101F12848C7B.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Notifications.Android.ref.dll_0491996ED90CE5DE.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Notifications.Unified.ref.dll_6F75B3BF7CE15061.mvfrm
@@ -15,7 +19,13 @@ Library\Bee\artifacts\mvdfrm\Unity.Notifications.ref.dll_EB20D8C2750212ED.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Notifications.iOS.ref.dll_BE49C1D8ACC4021C.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.PlasticSCM.Editor.ref.dll_EBB1919501649DC3.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Profiling.Core.ref.dll_5B3B8A0C4A5BD9D8.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Recorder.Base.ref.dll_8B84FD4E703C1E86.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Recorder.Editor.ref.dll_D48547118D965422.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Recorder.ref.dll_A643C5625759607F.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Rider.Editor.ref.dll_12912411083945D2.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Sequences.Editor.ref.dll_73AF7185B6EA778A.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Sequences.ref.dll_7AD1569DD6802697.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Settings.Editor.ref.dll_3ADD6EDBB44CBA7D.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Subsystem.Registration.ref.dll_F55E115723DEF1F9.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.TextMeshPro.Editor.ref.dll_EEDCF50BDD4614C9.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.TextMeshPro.ref.dll_4A5B02DEDB940168.mvfrm

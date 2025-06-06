@@ -25,6 +25,11 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.isGameOver)
+        {
+            agent.isStopped = true; // ⛔ Dừng mọi chuyển động
+            return;
+        }
         if (player != null)
         {
             float dist = Vector3.Distance(transform.position, player.position);

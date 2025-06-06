@@ -1,10 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AutoShooter : MonoBehaviour
 {
-    public GameObject bulletPrefab;
     public Transform shootPoint;
     public float shootInterval = 1f;
     public float attackRange = 10f;
@@ -12,35 +11,40 @@ public class AutoShooter : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.isGameOver) return;
+
         timer += Time.deltaTime;
 
         if (timer >= shootInterval)
         {
             timer = 0f;
-            ShootNearestEnemy();
+            ShootNearestTarget();
         }
     }
 
-    void ShootNearestEnemy()
+    void ShootNearestTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> allTargets = new List<GameObject>();
+        allTargets.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        allTargets.AddRange(GameObject.FindGameObjectsWithTag("Boss"));
+
         GameObject nearest = null;
         float minDist = Mathf.Infinity;
 
-        foreach (var enemy in enemies)
+        foreach (var target in allTargets)
         {
-            float dist = Vector3.Distance(transform.position, enemy.transform.position);
+            float dist = Vector3.Distance(transform.position, target.transform.position);
             if (dist < minDist && dist <= attackRange)
             {
                 minDist = dist;
-                nearest = enemy;
+                nearest = target;
             }
         }
 
         if (nearest != null)
         {
             Vector3 dir = (nearest.transform.position - shootPoint.position).normalized;
-            GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.LookRotation(dir));
+            ObjectPool.Instance.SpawnFromPool("Bullet", shootPoint.position, Quaternion.LookRotation(dir));
         }
     }
 }

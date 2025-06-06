@@ -2,9 +2,9 @@
 
 public class EnemyDeath : MonoBehaviour
 {
-    private EnemySpawner spawner;
+    private EnemyWaveSpawner spawner;
 
-    public void SetSpawner(EnemySpawner spawnerRef)
+    public void SetSpawner(EnemyWaveSpawner spawnerRef)
     {
         spawner = spawnerRef;
     }
