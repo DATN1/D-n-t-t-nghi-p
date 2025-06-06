@@ -32,7 +32,7 @@ public class BossBullet : MonoBehaviour
             if (hp != null)
             {
                 hp.TakeDamage(damage);
-                Debug.Log("💥 Player trúng đạn Boss");
+                Debug.Log(" Player trúng đạn Boss");
             }
 
             gameObject.SetActive(false);

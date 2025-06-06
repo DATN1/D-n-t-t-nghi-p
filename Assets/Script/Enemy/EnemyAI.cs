@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (GameManager.Instance != null && GameManager.Instance.isGameOver)
         {
-            agent.isStopped = true; // ⛔ Dừng mọi chuyển động
+            agent.isStopped = true; //  Dừng mọi chuyển động
             return;
         }
         if (player != null)

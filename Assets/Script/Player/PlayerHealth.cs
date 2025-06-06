@@ -30,6 +30,6 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         GameManager.Instance.EndGame();
         Debug.Log("Người chơi đã chết.");
-        // TODO: thêm xử lý như hiệu ứng, vô hiệu hóa điều khiển, v.v.
+        
     }
 }

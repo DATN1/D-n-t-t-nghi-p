@@ -49,7 +49,7 @@ public class BossSkill : MonoBehaviour
 
             GameObject bullet = ObjectPool.Instance.SpawnFromPool(bossBulletTag, firePoint.position, rotation);
 
-            Debug.Log($"🔫 Boss bắn đạn {i + 1} theo góc {angleOffset}°");
+            Debug.Log($" Boss bắn đạn {i + 1} theo góc {angleOffset}°");
         }
     }
 }
