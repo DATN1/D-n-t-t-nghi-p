@@ -51,5 +51,7 @@ public class BossSkill : MonoBehaviour
 
             Debug.Log($" Boss bắn đạn {i + 1} theo góc {angleOffset}°");
         }
+
     }
+
 }

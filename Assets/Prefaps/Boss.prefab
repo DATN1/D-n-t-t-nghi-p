@@ -199,11 +199,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83852faf17d92f45a50ab5da4fef45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2272429184782643077, guid: 32d2571c076da6c4ca7bfc951caff5f7,
-    type: 3}
+  bossBulletTag: BossBullet
   firePoint: {fileID: 6336700844407734183}
   fireInterval: 3
   fireRange: 20
+  bulletCount: 5
+  spreadAngle: 45
 --- !u!1 &2252611293305675414
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,9 +229,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2252611293305675414}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.563, y: 0, z: -0.018}
-  m_LocalScale: {x: 0.20424002, y: 0.20424002, z: 0.20424002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4595521884687714857}

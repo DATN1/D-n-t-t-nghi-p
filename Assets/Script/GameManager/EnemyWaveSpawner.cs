@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
-using System.Collections.Generic;
 
 public class EnemyWaveSpawner : MonoBehaviour
 {
@@ -21,33 +20,40 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     void Start()
     {
+        if (player == null)
+        {
+            Debug.LogError(" [EnemyWaveSpawner] Chưa gán 'player'!");
+            return;
+        }
+
         StartCoroutine(WaveLoop());
     }
 
     IEnumerator WaveLoop()
     {
+        yield return new WaitForSeconds(0.5f);
+
         while (true)
         {
             yield return StartCoroutine(SpawnWave());
-            waveInProgress = true;
 
             while (enemiesAlive > 0)
             {
                 yield return null;
             }
 
-            waveInProgress = false;
             Debug.Log($"[Wave {currentWave}] hoàn tất! Chuyển wave sau {timeBetweenWaves} giây...");
             yield return new WaitForSeconds(timeBetweenWaves);
         }
     }
+
 
     IEnumerator SpawnWave()
     {
         currentWave++;
         int enemiesThisWave = enemiesPerWaveStart + currentWave * 2;
 
-        Debug.Log($"🌊 [Wave {currentWave}] bắt đầu! Sẽ spawn {enemiesThisWave} quái.");
+        Debug.Log($"[Wave {currentWave}] bắt đầu! Sẽ spawn {enemiesThisWave} quái.");
 
         for (int i = 0; i < enemiesThisWave; i++)
         {
@@ -61,8 +67,6 @@ public class EnemyWaveSpawner : MonoBehaviour
             Debug.Log("Boss đang đến!!!");
             SpawnBoss();
         }
-
-        yield break;
     }
 
     void SpawnOneEnemy(int index)
@@ -74,8 +78,13 @@ public class EnemyWaveSpawner : MonoBehaviour
         if (NavMesh.SamplePosition(spawnPos, out NavMeshHit hit, 5f, NavMesh.AllAreas))
         {
             GameObject enemy = ObjectPool.Instance.SpawnFromPool("Enemy", hit.position, Quaternion.identity);
-            enemiesAlive++;
+            if (enemy == null)
+            {
+                Debug.LogWarning($" Không thể spawn Enemy {index} (pool trả về null)");
+                return;
+            }
 
+            enemiesAlive++;
             EnemyHealth health = enemy.GetComponent<EnemyHealth>();
             if (health != null)
             {
@@ -99,8 +108,13 @@ public class EnemyWaveSpawner : MonoBehaviour
         if (NavMesh.SamplePosition(spawnPos, out NavMeshHit hit, 5f, NavMesh.AllAreas))
         {
             GameObject boss = ObjectPool.Instance.SpawnFromPool("Boss", hit.position, Quaternion.identity);
-            enemiesAlive++;
+            if (boss == null)
+            {
+                Debug.LogWarning("⚠Không thể spawn Boss (pool trả về null)");
+                return;
+            }
 
+            enemiesAlive++;
             EnemyHealth health = boss.GetComponent<EnemyHealth>();
             if (health != null)
             {
@@ -113,7 +127,6 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     public void OnEnemyKilled()
     {
-        enemiesAlive--;
-        enemiesAlive = Mathf.Max(enemiesAlive, 0);
+        enemiesAlive = Mathf.Max(0, enemiesAlive - 1);
     }
 }

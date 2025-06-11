@@ -44,17 +44,43 @@ public class ObjectPool : MonoBehaviour
     {
         if (!poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning($"Không tìm thấy Pool với tag: {tag}");
+            Debug.LogError($"Pool chưa có tag: '{tag}'");
             return null;
         }
 
         GameObject obj = poolDictionary[tag].Dequeue();
+
+        if (obj == null)
+        {
+            Debug.LogError($" ObjectPool[{tag}] trả về null!");
+            return null;
+        }
 
         obj.SetActive(true);
         obj.transform.position = position;
         obj.transform.rotation = rotation;
 
         poolDictionary[tag].Enqueue(obj);
+
         return obj;
     }
+    public void BuildPools()
+    {
+        poolDictionary = new Dictionary<string, Queue<GameObject>>();
+
+        foreach (Pool pool in pools)
+        {
+            Queue<GameObject> objectPool = new Queue<GameObject>();
+
+            for (int i = 0; i < pool.size; i++)
+            {
+                GameObject obj = Instantiate(pool.prefab);
+                obj.SetActive(false);
+                objectPool.Enqueue(obj);
+            }
+
+            poolDictionary.Add(pool.tag, objectPool);
+        }
+    }
+
 }

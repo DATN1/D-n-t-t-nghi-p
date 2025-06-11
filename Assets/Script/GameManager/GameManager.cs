@@ -3,13 +3,15 @@
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public bool isGameOver = false;
+
+    public virtual bool isGameOver { get; set; } = false; // ✅ cho phép gán
 
     void Awake()
     {
-        if (Instance == null)
-            Instance = this;
+        Instance = this;
     }
+
+
 
     public void EndGame()
     {

@@ -32,4 +32,19 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Người chơi đã chết.");
         
     }
+    public void SetHealthForTest(int hp)
+    {
+        currentHealth = hp;
+        isDead = false;
+    }
+
+    public void SetDead()
+    {
+        isDead = true;
+    }
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
 }

@@ -2,17 +2,23 @@
 
 public class EnemyAttack : MonoBehaviour
 {
-    public int damage = 5;                  // Sát thương mỗi lần tấn công
-    public float attackCooldown = 1f;       // Thời gian giữa 2 lần tấn công
+    public int damage = 5;
+    public float attackCooldown = 1f;
     private bool canAttack = true;
 
     private void OnTriggerStay(Collider other)
     {
-        if (GameManager.Instance.isGameOver) return;
+        TryAttack(other.gameObject);
+    }
 
-        if (other.CompareTag("Player") && canAttack)
+    // ✅ Hàm có thể gọi trong test
+    public void TryAttack(GameObject target)
+    {
+        if (GameManager.Instance != null && GameManager.Instance.isGameOver) return;
+
+        if (target.CompareTag("Player") && canAttack)
         {
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
