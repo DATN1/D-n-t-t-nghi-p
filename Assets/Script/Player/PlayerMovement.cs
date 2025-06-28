@@ -3,7 +3,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+<<<<<<< HEAD
     public FloatingJoystick joystick;
+=======
+    public FixedJoystick joystick;
+>>>>>>> 2c9431f406680a1057d899ea34f985fc65f63359
 
     private Rigidbody rb;
     private PlayerHealth playerHealth;

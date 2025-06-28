@@ -64,6 +64,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         if (currentWave % bossWaveInterval == 0)
         {
             yield return new WaitForSeconds(1f);
+<<<<<<< HEAD
 
             int bossCount = Mathf.FloorToInt(currentWave / bossWaveInterval);
             Debug.Log($"Wave {currentWave} - Spawning {bossCount} Boss!");
@@ -73,6 +74,10 @@ public class EnemyWaveSpawner : MonoBehaviour
                 SpawnBoss(); // đảm bảo bạn có định nghĩa đúng hàm này
                 yield return new WaitForSeconds(0.5f);
             }
+=======
+            Debug.Log("Boss đang đến!!!");
+            SpawnBoss();
+>>>>>>> 2c9431f406680a1057d899ea34f985fc65f63359
         }
     }
 

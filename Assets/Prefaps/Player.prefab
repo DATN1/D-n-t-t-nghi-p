@@ -31,6 +31,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9182337667131018045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &4454897997019913044
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +107,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+=======
+>>>>>>> 2c9431f406680a1057d899ea34f985fc65f63359
 --- !u!1 &5155480432070348752
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +125,10 @@ GameObject:
   - component: {fileID: 6363705642303975047}
   - component: {fileID: 1589195787188053227}
   - component: {fileID: 4924947695185220794}
+<<<<<<< HEAD
   - component: {fileID: 4289558206183191170}
+=======
+>>>>>>> 2c9431f406680a1057d899ea34f985fc65f63359
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -143,9 +149,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
   - {fileID: 1183352762985387048}
   - {fileID: 8576646929347762015}
   - {fileID: 2556654610522784562}
+=======
+  - {fileID: 8576646929347762015}
+>>>>>>> 2c9431f406680a1057d899ea34f985fc65f63359
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5875634926091853435
@@ -287,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e389c144ea3fbac4dbdd56fe35ac2933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   shootPoint: {fileID: 8576646929347762015}
   shootInterval: 1
   attackRange: 10
@@ -440,3 +451,10 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+=======
+  bulletPrefab: {fileID: 2775825024815287725, guid: b5dd611b93ed0d6479e0c572e32f0f42,
+    type: 3}
+  shootPoint: {fileID: 8576646929347762015}
+  shootInterval: 1
+  attackRange: 10
+>>>>>>> 2c9431f406680a1057d899ea34f985fc65f63359

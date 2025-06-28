@@ -9,7 +9,10 @@ public class ObjectPool : MonoBehaviour
         public string tag;
         public GameObject prefab;
         public int size;
+<<<<<<< HEAD
         public bool canExpand = true;
+=======
+>>>>>>> 2c9431f406680a1057d899ea34f985fc65f63359
     }
 
     public static ObjectPool Instance;
@@ -45,6 +48,7 @@ public class ObjectPool : MonoBehaviour
     {
         if (!poolDictionary.ContainsKey(tag))
         {
+<<<<<<< HEAD
             Debug.LogWarning("Không tìm thấy pool với tag: " + tag);
             return null;
         }
@@ -73,6 +77,27 @@ public class ObjectPool : MonoBehaviour
         }
 
         return null;
+=======
+            Debug.LogError($"Pool chưa có tag: '{tag}'");
+            return null;
+        }
+
+        GameObject obj = poolDictionary[tag].Dequeue();
+
+        if (obj == null)
+        {
+            Debug.LogError($" ObjectPool[{tag}] trả về null!");
+            return null;
+        }
+
+        obj.SetActive(true);
+        obj.transform.position = position;
+        obj.transform.rotation = rotation;
+
+        poolDictionary[tag].Enqueue(obj);
+
+        return obj;
+>>>>>>> 2c9431f406680a1057d899ea34f985fc65f63359
     }
     public void BuildPools()
     {
